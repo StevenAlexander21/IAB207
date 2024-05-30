@@ -1,0 +1,84 @@
+@keyframes slideInLeft{
+    from{
+        transform: translateX(-400px);
+    }
+
+    to{
+        transform: translateX(0px);
+    }
+}
+
+
+
+.col-md-12.text-md-start.text-center
+{
+    display:grid;
+    place-items:center;
+}
+
+#Greeting{
+    font-size: 50px;
+    animation-name: slideInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    font-weight: bold;
+}
+
+#Greeting2{
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Suggest-Button.btn.btn-primary.btn-lg{
+    margin-bottom: 100px;
+    color:black;
+    background-color:white;
+    border: 1px solid black;
+}
+
+.Suggest-Button.btn.btn-primary.btn-lg:hover{
+    margin-bottom: 100px;
+    color:white;
+    background-color:black;
+    border: 1px solid white;
+}
+
+.d-block.w-100{
+    border-radius: 30px;
+    margin-bottom: 100px;
+}
+
+.col-md-4.text-md-start.text-center
+{
+    margin-left: 100px;
+    margin-top: 50px;
+    display: grid;
+    align-items:center;
+    margin-right: 100px;
+}
+
+#Prep{
+    color:black;
+}
+
+.card-group{
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.btn.btn-danger-details{
+    color:black;
+    background-color:white;
+    border: 1px solid black;
+}
+
+.btn.btn-danger-details:hover{
+    color:white;
+    background-color:black;
+    border: 1px solid white;
+}

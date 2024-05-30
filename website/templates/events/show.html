@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row mt-5 mb-3">
+    <div class="col-md-12">
+      <div class="float-left">
+        <h1 class="mb-0">{{ event.name }}</h1>
+        <p>Popular Event</p>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Event -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card my-3">
+        <div class="card-body text-center">
+          <div class="media justify-content-center">
+            <img class="align-self-center mr-3" src="{{ event.image }}">
+            <div class="media-body">
+              <h5 class="mt-0">{{ event.name }}</h5>
+              <p>{{ event.description }}</p>
+              <p>{{ event.location }}</p>
+              <p>{{ event.datetime }}</p>
+  
+              {% if current_user.is_authenticated %}
+              {{ render_form(bform) }}
+              {% else %}
+              <a href="{{ url_for('auth.login') }}" class="btn btn-info">Please login to book</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- Comments -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Comments</h1>
+    </div>
+  </div>
+
+  <div class="row border-bottom">
+    {{ render_form(form,"/events/{0}/comment".format(event.id)) }}
+    {% for comment in event.comments %}
+    <div class="col-md-12">
+      <b>{{ comment.user.name }} <span class="ml-2 text-muted">{{comment.created_at}}</span></b>
+      <p>{{ comment.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

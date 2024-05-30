@@ -1,0 +1,16 @@
+.row.mt-5{
+    display:grid;
+    place-items:center;
+}
+
+.btn.btn-primary.btn-md{
+    margin-bottom: 150px;
+    background-color:black;
+    border: 1px solid black;
+}
+
+.btn.btn-primary.btn-md:hover{
+    background-color:white;
+    border: 1px solid black;
+    color:black;    
+}

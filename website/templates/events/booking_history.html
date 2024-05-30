@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 id = "BookHeader">Booking History</h2>
+{% if event_data %}
+    <div class="book-group">
+        {% for bookin in event_data %}
+        <div class="col-md-6 col-12 card-container">
+           <img class="book-img" src="{{ bookin.event.image }}" alt="example">
+           <div class="card-body">
+              <h5 class="card-title">{{ bookin.event.name }}</h5>
+              <p class="card-text">{{ bookin.event.location }}</p>
+              <p class="card-text">{{ bookin.event.datetime }}</p>
+              <p><strong>Tickets Purchased:</strong> {{ bookin.tickets }}</p>
+           </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+<div class="NoEvents">
+    <p>You have not booked any events <span id = "YetSpan">yet</span>.</p>
+</div>
+{% endif %}
+{% endblock %}

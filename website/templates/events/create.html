@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block content %}
+<link rel="stylesheet" href="../../static/style/create.css">
+<div class="container">
+  <div class="row mt-5">
+    <div class="  ">
+      <h1>Add a Event</h1>
+      <p>Enter a event people would like to attend.</p>
+      {{render_form(form)}}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
